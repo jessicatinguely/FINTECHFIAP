@@ -1,0 +1,299 @@
+/* === ESTILOS === */
+body {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* === ELEMENTOS DA PAG PRINCIPAL LOGIN === */
+.triangle-top {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 120px solid transparent;
+    border-right: 120px solid transparent;
+    border-top: 120px solid #e67e22;
+    z-index: 1;
+}
+
+.triangle-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 120px solid transparent;
+    border-right: 120px solid transparent;
+    border-bottom: 120px solid #e67e22;
+    z-index: 1;
+}
+
+/* === CONTAINER PRINCIPAL === */
+.login-container {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* === CIRCULO DA TELA COM DADOS === */
+.login-card {
+    background: #ffffff;
+    border-radius: 50%;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    position: relative;
+}
+
+/* === TELAS === */
+.screen {
+    display: none;
+    width: 100%;
+}
+
+.screen.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* === LOGO/ICONE === */
+.logo-container {
+    margin-bottom: 20px;
+}
+
+.chart-icon {
+    display: flex;
+    align-items: end;
+    gap: 4px;
+    margin-bottom: 10px;
+    position: relative;
+    height: 40px;
+    justify-content: center;
+}
+
+.bar {
+    background: #6c757d;
+    border-radius: 2px;
+}
+
+.bar:nth-child(1) { width: 6px; height: 15px; }
+.bar:nth-child(2) { width: 6px; height: 25px; }
+.bar:nth-child(3) { width: 6px; height: 20px; }
+.bar:nth-child(4) { width: 6px; height: 30px; }
+.bar:nth-child(5) { width: 6px; height: 35px; }
+
+.trend-line {
+    position: absolute;
+    width: 50px;
+    height: 2px;
+    background: #e67e22;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-15deg);
+}
+
+.trend-dots {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 6px;
+}
+
+.dot {
+    width: 4px;
+    height: 4px;
+    background: #e67e22;
+    border-radius: 50%;
+}
+
+.icon-container {
+    font-size: 35px;
+    color: #e67e22;
+    margin-bottom: 10px;
+}
+
+/* === TITULOS === */
+.screen-title {
+    color: #2c3e50;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.screen-subtitle {
+    font-size: 11px;
+    color: #6c757d;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* === INPUTs === */
+.form-group {
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.form-control {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-size: 13px;
+    color: #495057;
+    width: 100%;
+}
+
+.form-control:focus {
+    background: #ffffff;
+    border-color: #e67e22;
+    box-shadow: 0 0 0 0.2rem rgba(230, 126, 34, 0.25);
+    outline: none;
+}
+
+.form-control::placeholder {
+    color: #6c757d;
+}
+
+/* === BOTAO PRINCIPAL === */
+.btn-primary-custom {
+    background: #e67e22;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    padding: 10px 25px;
+    font-weight: 600;
+    margin: 10px 0;
+    cursor: pointer;
+    width: 100%;
+    font-size: 14px;
+}
+
+.btn-primary-custom:hover {
+    background: #d35400;
+}
+
+/* === BOTAO VOLTAR === */
+.btn-back {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    background: none;
+    border: none;
+    color: #6c757d;
+    font-size: 16px;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-back:hover {
+    background: rgba(230, 126, 34, 0.1);
+    color: #e67e22;
+}
+
+/* === LINKS === */
+.screen-links {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.screen-links a {
+    color: #e67e22;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 6px;
+    cursor: pointer;
+}
+
+.screen-links a:hover {
+    color: #d35400;
+    text-decoration: underline;
+}
+
+#registerScreen .screen-links a:last-child {
+    color: #cccccc;;
+}
+
+/* === MENSAGENS === */
+.alert-custom {
+    background: rgba(230, 126, 34, 0.1);
+    border: 1px solid rgba(230, 126, 34, 0.3);
+    color: #d35400;
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-size: 11px;
+    margin: 8px 0;
+    text-align: center;
+}
+
+.alert-success {
+    background: rgba(39, 174, 96, 0.1);
+    border-color: rgba(39, 174, 96, 0.3);
+    color: #27ae60;
+}
+
+/* === RESPONSIVO === */
+@media (max-width: 768px) {
+    .triangle-top, .triangle-bottom {
+        border-left-width: 80px;
+        border-right-width: 80px;
+        border-top-width: 80px;
+        border-bottom-width: 80px;
+    }
+
+    .login-card {
+        width: 350px;
+        height: 350px;
+        padding: 30px;
+    }
+
+    .screen-title {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-card {
+        width: 300px;
+        height: 300px;
+        padding: 25px;
+    }
+
+    .screen-title {
+        font-size: 16px;
+    }
+
+    .form-control {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .btn-primary-custom {
+        padding: 8px 20px;
+        font-size: 13px;
+    }
+}
